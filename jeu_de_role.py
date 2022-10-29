@@ -72,6 +72,6 @@ while (vie_joueur>0 and vie_ennemi>0):
     print("_" * 50)
 
 if vie_joueur>0 and vie_ennemi<=0:
-    print("Vous avez gagné le combat.")
+    print("Vous avez gagné le combat!")
 else:
     print("Vous êtes mort!")
