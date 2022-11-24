@@ -1,4 +1,6 @@
 import sys
+import os
+import json
 LISTE_COURSE=[]
 choix=""
 MENU = """Choisissez parmi les 5 options suivantes :
@@ -10,6 +12,15 @@ MENU = """Choisissez parmi les 5 options suivantes :
 \U0001F449 Votre choix : """
 
 MENU_CHOICE=["1","2","3","4","5"]
+
+
+# on teste l'existance d'un fichier liste.json
+# si il existe on charge les élements dans LISTE_COURSE
+CUR_DIR=os.path.dirname(__file__)
+file_liste=os.path.join(CUR_DIR,"file_in","liste.json")
+if os.path.exists(file_liste):
+    with open(file_liste,'r',encoding="utf-8") as f:
+        LISTE_COURSE=json.load(f)
 
 
 while (True):
@@ -56,6 +67,9 @@ while (True):
 
     #5-Quitter
     if int(choix)==5:
+        #sauvegarde dans le fichier liste.json
+        with open(file_liste,'w',encoding="utf-8") as f:
+            json.dump(LISTE_COURSE,f,indent=4)
         print("A bientôt.")
         sys.exit()
     print("_" * 50)
