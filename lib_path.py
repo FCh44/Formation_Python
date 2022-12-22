@@ -32,5 +32,5 @@ p=p.parent
 p.rmdir()
 p=p.parent.parent.parent
 print(p)
-#on utilise shutile pour suppriler des dossiers non vide
+#on utilise shutil pour supprimer des dossiers non vide
 shutil.rmtree(p)
