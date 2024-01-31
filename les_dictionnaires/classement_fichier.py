@@ -23,7 +23,7 @@ EXTENSIONS_MAPPING ={
 BASE_DIR=Path.home()/'Downloads'
 dir_data=BASE_DIR/'sources/data'
 
-#list file in scan directory
+#list file in scan directory.
 
 files_list=[f for f in dir_data.iterdir() if f.is_file()]
 print(files_list)
